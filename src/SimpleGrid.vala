@@ -60,13 +60,11 @@ public class Gtk4Demo.SimpleGrid : Widget {
         var manager = (ConstraintLayout) layout_manager;
         var guide = new ConstraintGuide ();
 
-        with (guide) {
-            name = "space";
-            set_min_size (10, 10);
-            set_nat_size (100, 10);
-            set_max_size (200, 20);
-            set_strength (ConstraintStrength.REQUIRED);
-        }
+        guide.name = "space";
+        guide.set_min_size (10, 10);
+        guide.set_nat_size (100, 10);
+        guide.set_max_size (200, 20);
+        guide.set_strength (ConstraintStrength.REQUIRED);
         manager.add_guide (guide);
 
         var constraint = new Constraint.const (
